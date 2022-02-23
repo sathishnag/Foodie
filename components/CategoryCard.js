@@ -30,7 +30,7 @@ const CategoryCard = ({
         shadowColor: '#52006A',
       }}>
           <View style={{flex:1}}>
-            <Text style={{textAlign:'center',fontSize:10 , marginLeft:8, marginRight:8,...FONTS.body5}}>veg & Non veg</Text>
+            <Text style={{textAlign:'center',fontSize:2 , marginLeft:8, marginRight:8,...FONTS.body4}}>veg & Non veg</Text>
             <Image resizeMode="contain" style={{marginLeft:'auto',marginRight:'auto', flex:1}} source={icons.donut}></Image>
           </View>
     </TouchableOpacity>

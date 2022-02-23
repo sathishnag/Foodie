@@ -86,7 +86,7 @@ const Home = ({navigation}) => {
             <View style={{paddingHorizontal : SIZES.base,flex:1}}>
             <FlatList
           data={ui_array}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.id.toString()}
           scrollEnabled={true}
           numColumns={3}
           renderItem={({item}) => {

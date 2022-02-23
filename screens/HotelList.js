@@ -3,7 +3,7 @@ import { View, Text, Image, FlatList, Dimensions } from "react-native"
 import Header from "../components/Header";
 import HotelCard from "../components/HotelCard";
 import { SIZES, COLORS, FONTS, constants, icons, images } from "../constants";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { color } from "react-native-reanimated";
 
@@ -61,7 +61,7 @@ const HotelList = ({navigation}) => {
           scrollEnabled={true}
           renderItem={({item}) => {
             return (
-                <TouchableOpacity key={item.id} onPress = {() => {navigation.navigate('Hotel Detail')}}
+                <TouchableWithoutFeedback key={item.id} onPress = {() => {navigation.navigate('Hotel Detail')}}
                 style={{
                   width: widthScreen * 0.94,
                   height: heightScreen * 0.14,
@@ -85,7 +85,7 @@ const HotelList = ({navigation}) => {
                       <Text style={{...FONTS.h5}}>{item.label}</Text>
                       <Text style={{...FONTS.body5, color:COLORS.grey}}>South indian</Text>
                     </View>
-              </TouchableOpacity>
+              </TouchableWithoutFeedback>
             );
           }}
         />

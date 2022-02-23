@@ -6,10 +6,16 @@ import {MainLayout} from './screens'
 import {Home} from './screens'
 import {HotelList} from './screens'
 import {HotelDetail} from './screens'
+import { configureStore } from './store/store';
+import { Provider } from 'react-redux';
 
 const Stack = createStackNavigator();
 const App = () => {
+
+    const store = configureStore();
+
     return (
+        <Provider store={store}>
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{
@@ -24,6 +30,7 @@ const App = () => {
                 <Stack.Screen name="Hotel Detail" component={HotelDetail} />
             </Stack.Navigator>
         </NavigationContainer>
+        </Provider>
     )
 }
 

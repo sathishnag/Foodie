@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    TouchableOpacity, image, View
+    TouchableOpacity, image, View, Text
 } from 'react-native';
 import {FONTS,COLORS, icons, SIZES } from '../constants';
 import IconButton from './IconButton';
@@ -15,9 +15,10 @@ const StepperInput = ({
         <View
         style = {{
             flexDirection: 'row',
-            height: 60,
-            width: 130,
-            backgroundColor: COLORS.grey,
+            height: 40,
+            width: 150,
+            left: 2,
+            backgroundColor: COLORS.lightGray2,
             borderRadius: SIZES.radius,
             ...containerStyle
         }}
@@ -30,9 +31,9 @@ const StepperInput = ({
                 }}
                 icon={'minus'}
                 iconStyle = {{
-                    height:25,
-                    width: 25,
-                    color: value > 1 ? COLORS.primary : COLORS.grey,
+                    height:15,
+                    width: 15,
+                    color: value > 1 ? COLORS.primary : COLORS.primary,
                 }}
                 onPress={onMinus}
 
@@ -42,9 +43,9 @@ const StepperInput = ({
             <View style={{
                 flex:1,
                 alignItems: 'center',
-                justifyContent: '1' 
+                justifyContent: 'center'
             }}>
-                <Text> style={{...FONTS.h2}}
+                <Text style={{...FONTS.h4}}>
                     {value}
                 </Text>
             </View>
@@ -55,7 +56,7 @@ const StepperInput = ({
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}
-                icon={'minus'}
+                icon={'plus'}
                 iconStyle = {{
                     height:25,
                     width: 25,

@@ -1,7 +1,7 @@
 import {
-    TouchableOpacity, image
+    TouchableOpacity, image, Text
 } from 'react-native';
-import { Icon } from 'react-native-vector-icons/Icon';
+import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { COLORS } from '../constants';
 
@@ -14,7 +14,7 @@ const IconButton = ({containerStyle, icon, iconStyle, onPress}) => {
             onPress={onPress}
         >
           <Text>
-              <Icon name="home" size={20} style={{width:30, height:30, ...iconStyle}}  color={COLORS.white}></Icon>
+              <Icon name={icon} size={16} style={{width:15, height:15, ...iconStyle}}  color={COLORS.white}></Icon>
           </Text>
 
         </TouchableOpacity>

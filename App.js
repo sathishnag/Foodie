@@ -8,6 +8,7 @@ import {HotelList} from './screens'
 import {HotelDetail} from './screens'
 import { configureStore } from './store/store';
 import { Provider } from 'react-redux';
+import { Cart } from './screens'
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="OrderDelivery" component={OrderDelivery} />
                 <Stack.Screen name="Hotel Detail" component={HotelDetail} />
+                <Stack.Screen name="cart" component={Cart} />
             </Stack.Navigator>
         </NavigationContainer>
         </Provider>

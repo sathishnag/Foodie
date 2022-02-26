@@ -1,4 +1,3 @@
-
 import React, {useEffect, useState} from 'react';
 import {
   SafeAreaView,
@@ -18,7 +17,12 @@ import { idText } from 'typescript';
 import { Button } from 'react-native-elements';
 import { useDispatch, useSelector } from 'react-redux';
 import { State } from 'react-native-gesture-handler';
-import { deccrementQuantity, doInitializeState , incrementQuantity } from '../actions/actions';
+import {Dimensions } from "react-native"
+import LinearGradient from "react-native-linear-gradient";
+import { addToCart, deccrementQuantity, doInitializeState , incrementQuantity, updateFoodItems, removeFromCart} from '../actions/actions';
+
+
+const {width: widthScreen, height: heightScreen} = Dimensions.get('screen');
 
 const FoodItem = ({item, onDummyToRender}) => {
   const foodItemsDataList = useSelector(state => state.FoodItemsReducer)
@@ -33,11 +37,17 @@ const FoodItem = ({item, onDummyToRender}) => {
   }
 
   function addToCartList (item) {
+   dispatch(addToCart(item));
    dispatch(incrementQuantity(item));
+   alert(JSON.stringify(foodItemsDataList.selectedCount));
+   alert(JSON.stringify(foodItemsDataList.cart))
   }
 
   function removeFromCartList (item) {
+    dispatch(removeFromCart(item));
     dispatch(deccrementQuantity(item));
+    alert(JSON.stringify(foodItemsDataList.selectedCount));
+    alert(JSON.stringify(foodItemsDataList.cart));
    }
 
   return(
@@ -115,9 +125,11 @@ const ExpandableComponent = ({item, onClickFunction, onDummyToRender, index}) =>
     onClickFunction
   }
   style={styles.header}>
+  <View style={{backgroundColor:'lightgrey'}}>
   <Text style={styles.headerText}>
     {item.category_name}
   </Text>
+  </View>
 </TouchableOpacity>
 <View
   style={{
@@ -134,7 +146,7 @@ const ExpandableComponent = ({item, onClickFunction, onDummyToRender, index}) =>
 };
 
 
-const HotelDetail = () => {
+const HotelDetail = ({navigation}) => {
   const dispatch = useDispatch();
   const foodItemsDataList = useSelector(state => state.FoodItemsReducer);
   const [multiSelect, setMultiSelect] = useState(true);
@@ -159,7 +171,7 @@ const HotelDetail = () => {
           : (array[placeindex]['isExpanded'] = false),
       );
     }
-    dispatch(doInitializeState(array));
+    dispatch(updateFoodItems(array));
   };
 
   const updateLayout1 = () => {
@@ -168,11 +180,10 @@ const HotelDetail = () => {
 
   React.useEffect (() => {
     dispatch(doInitializeState(CONTENT));
-    },[foodItemsDataList.items]);
+    },[]);
 
   return (
-    <SafeAreaView style={{flex: 1, }}>
-      <View style={styles.container}>
+    <View style={{flex: 1, backgroundColor:'white'}}>
         <ScrollView>
           {foodItemsDataList.items.map((item, key) => (
             <ExpandableComponent
@@ -189,8 +200,47 @@ const HotelDetail = () => {
           />
           ))}
         </ScrollView>
-      </View>
-    </SafeAreaView>
+      {foodItemsDataList.selectedCount  > 0?
+     (<View style={{height:50,
+     flexDirection:'row'}}>
+         <View
+          style={{
+            flex: 0.8,
+            flexDirection: "row",
+            paddingHorizontal: 1,
+            paddingBottom: 10,
+            borderTopLeftRadius: 20,
+            borderBottomEndRadius : 20,
+            borderTopRightRadius: 20,
+            backgroundColor: COLORS.white,
+          }}
+        >
+
+    <TouchableOpacity
+            style={{
+                alignItems:'center',
+                justifyContent:'center',
+                width:  widthScreen - 50,
+                backgroundColor: COLORS.primary,
+                borderRadius : 50,
+                left: 20,
+                ...FONTS.h4
+            }}
+            onPress = {() => navigation.navigate('cart')}
+        >
+            <Text 
+                style={{
+                }}
+            >
+              {
+                `${foodItemsDataList.selectedCount} selected`
+              }
+            </Text>
+        </TouchableOpacity>
+
+        </View>
+      </View>) : <Text></Text>}
+    </View>
   );
 };
 
@@ -250,108 +300,22 @@ const CONTENT = [
     isExpanded: true,
     category_name: 'BREAKFAST',
     subcategory: [
-      {id: 3, val: 'Sub Cat 3', qty:1},
-      {id: 300, val: 'Sub Cat 3', qty:1},
+      {id: 3, val: 'Sub Cat 3', qty:0},
+      {id: 300, val: 'Sub Cat 3', qty:0},
     ],
   },
   {
     isExpanded: false,
     category_name: 'Item 2',
     subcategory: [
-      {id: 4, val: 'Sub Cat 4', qty:1},
-      {id: 5, val: 'Sub Cat 5', qty:1},
+      {id: 4, val: 'Sub Cat 4', qty:0},
+      {id: 5, val: 'Sub Cat 5', qty:0},
+      {id: 41, val: 'Sub Cat 42', qty:0},
+      {id: 52, val: 'Sub Cat 52', qty:0},
+      {id: 42, val: 'Sub Cat 43', qty:0},
+      {id: 592, val: 'Sub Cat 54', qty:0},
     ],
   },
-  {
-    isExpanded: false,
-    category_name: 'Item 3',
-    subcategory: [
-      {id: 7, val: 'Sub Cat 7', qty:1},
-      {id: 9, val: 'Sub Cat 9', qty:1},
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 4',
-    subcategory: [
-      {id: 10, val: 'Sub Cat 10', qty:1},
-      {id: 12, val: 'Sub Cat 2', qty:1},
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 5',
-    subcategory: [
-      {id: 13, val: 'Sub Cat 13', qty:1},
-      {id: 15, val: 'Sub Cat 5', qty:1},
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 6',
-    subcategory: [
-      {id: 17, val: 'Sub Cat 17', qty:1},
-      {id: 18, val: 'Sub Cat 8', qty:1},
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 7',
-    subcategory: [{id: 20, val: 'Sub Cat 20', qty:1}],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 8',
-    subcategory: [{id: 22, val: 'Sub Cat 22', qty:1}],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 9',
-    subcategory: [
-      {id: 26, val: 'Sub Cat 26', qty:1},
-      {id: 27, val: 'Sub Cat 7', qty:1},
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 10',
-    subcategory: [
-      {id: 28, val: 'Sub Cat 28', qty:1},
-      {id: 30, val: 'Sub Cat 0', qty:1},
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 11',
-    subcategory: [{id: 31, val: 'Sub Cat 31', qty:1}],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 12',
-    subcategory: [{id: 34, val: 'Sub Cat 34', qty:1}],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 13',
-    subcategory: [
-      {id: 38, val: 'Sub Cat 38', qty:1},
-      {id: 39, val: 'Sub Cat 9', qty:1},
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 14',
-    subcategory: [
-      {id: 40, val: 'Sub Cat 40', qty:1},
-      {id: 42, val: 'Sub Cat 2', qty:1},
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: 'Item 15',
-    subcategory: [
-      {id: 43, val: 'Sub Cat 43', qty:1},
-      {id: 44, val: 'Sub Cat 44', qty:1},
-    ],
-  },
+  
+
 ];

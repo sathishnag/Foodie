@@ -10,7 +10,7 @@ import Home from "./Home";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const TabButton = ({onPress, isFocussed, label}) => {
+const TabButton = ({onPress, isFocussed, label, iconName}) => {
   return (
     <View
     style={{
@@ -23,9 +23,9 @@ const TabButton = ({onPress, isFocussed, label}) => {
       borderRadius: 25,
     }}
   >
-    <TouchableWithoutFeedback onPress={onPress}>
-          <Text>
-              <Icon name="home" size={20} color={isFocussed ? COLORS.primary:COLORS.black}></Icon>
+    <TouchableWithoutFeedback style={{flex:1,flexDirection:'column', alignItems:'center',justifyContent:'center', alignContent:'center'}} onPress={onPress}>
+          <Text style={{marginLeft:4}}>
+              <Icon name={iconName} style={{justifyContent:"center", left:8}} size={20} color={isFocussed ? COLORS.primary:COLORS.black}></Icon>
           </Text>
           <Text style={{...FONTS.h5}}>{label}</Text>
     </TouchableWithoutFeedback>
@@ -101,19 +101,20 @@ const TabButton = ({onPress, isFocussed, label}) => {
             onPress={() => {setSelectedTab('Home')}}
             isFocussed={selectedTab == 'Home'}
             label='Home'
+            iconName={'home'}
             />
           <TabButton 
             onPress={() => {setSelectedTab('Cart')}}
             isFocussed={selectedTab == 'Cart'}
-            label='Cart'
+            iconName={'shopping-cart'}
+            label='cart'
             />
           <TabButton 
             onPress={() => {navigation.navigate('Restaurant')}}
-            isFocussed={selectedTab == 'Dart'}
-            label='Dart'
+            isFocussed={selectedTab == 'Profile'}
+            label='Profile'
+            iconName={'user'}
             />
-          <TabButton />
-          <TabButton />
         </View>
       </View>
     </Animated.View>

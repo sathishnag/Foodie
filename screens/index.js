@@ -5,6 +5,8 @@ import MainLayout from './MainLayout'
 import Cart from './Cart'
 import HotelList from './HotelList'
 import HotelDetail from './HotelDetail'
+import PhoneSignIn from './PhoneSignIn'
+import Login from './Login'
 
 export {
     Home,
@@ -13,5 +15,7 @@ export {
     MainLayout,
     Cart,
     HotelList,
-    HotelDetail
+    HotelDetail,
+    PhoneSignIn,
+    Login
 }

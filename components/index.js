@@ -4,5 +4,6 @@ import { HotelCard } from './HotelCard'
 import { StepperInput } from './StepperInput'
 import {FooterTotal} from './FooterTotal'
 import {TextButton} from './FooterTotal'
+import OtpVerification from './otp/OtpVerification'
 
-export{Header, CategoryCard, HotelCard, StepperInput, FooterTotal, TextButton};
+export{Header, CategoryCard, HotelCard, StepperInput, FooterTotal, TextButton, OtpVerification};

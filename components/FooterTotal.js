@@ -5,8 +5,9 @@ import { FONTS, SIZES, COLORS } from "../constants";
 import { View, Text} from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { fonts } from "react-native-elements/dist/config";
+import RazorpayCheckout from 'react-native-razorpay';
 
-const FooterTotal = ({on}) => {
+const FooterTotal = ({onPress}) => {
     return (
         <View>
             <LinearGradient
@@ -79,7 +80,30 @@ const FooterTotal = ({on}) => {
                     backgroundColor: COLORS.primary
                 }}
                 label='Pay your order'
-                onPressEve={() => {alert()}}
+                onPressEve={() => {
+                    var options = {
+                    description: 'Credits towards consultation',
+                    image: 'https://i.imgur.com/3g7nmJC.png',
+                    currency: 'INR',
+                    key: 'rzp_test_kciDCmV3IqJl3h',
+                    amount: '5000',
+                    name: 'Acme Corp',
+                    order_id: 'order_J112uAWw89vOAq',//Replace this with an order_id created using Orders API.
+                    prefill: {
+                      email: 'sathish.auttpc@gmqil.com',
+                      contact: '9191919191',
+                      name: 'Gaurav Kumar'
+                    },
+                    theme: {color: '#FC6D3F'}
+                  }
+                  RazorpayCheckout.open(options).then((data) => {
+                    // handle success
+                    alert(`Success: ${data.razorpay_payment_id}`);
+                  }).catch((error) => {
+                    // handle failure
+                    alert(`Error: ${error.code} | ${error.description}`);
+                  });
+                }}
                 >
                 </TextButton>
 

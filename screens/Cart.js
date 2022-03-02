@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { color } from "react-native-reanimated";
 import StepperInput from "../components/StepperInput";
 import FooterTotal from "../components/FooterTotal";
+import RazorpayCheckout from 'react-native-razorpay';
 
 const Cart = ({navigation}) => {
 

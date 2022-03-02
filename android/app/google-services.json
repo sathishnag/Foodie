@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "524743419189",
+    "project_id": "satz-37d90",
+    "storage_bucket": "satz-37d90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524743419189:android:631e0256cc4554badfd87c",
+        "android_client_info": {
+          "package_name": "com.satz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524743419189-23l5gl85scj8n4od8ckf8lm1915v105r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKD-RauLgFIJh576qaQCMYSuYR0RNtk8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524743419189-23l5gl85scj8n4od8ckf8lm1915v105r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

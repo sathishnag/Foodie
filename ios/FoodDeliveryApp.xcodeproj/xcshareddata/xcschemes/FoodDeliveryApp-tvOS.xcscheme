@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "FoodDeliveryApp-tvOSTests.xctest"
-               BlueprintName = "FoodDeliveryApp-tvOSTests"
-               ReferencedContainer = "container:FoodDeliveryApp.xcodeproj">
+               BuildableName = "satz-tvOSTests.xctest"
+               BlueprintName = "satz-tvOSTests"
+               ReferencedContainer = "container:satz.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

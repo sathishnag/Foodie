@@ -1,9 +1,17 @@
-import { Header } from './Header'
-import { CategoryCard } from './CategoryCard'
-import { HotelCard } from './HotelCard'
-import { StepperInput } from './StepperInput'
-import {FooterTotal} from './FooterTotal'
-import {TextButton} from './FooterTotal'
-import OtpVerification from './otp/OtpVerification'
+import CustomText from './CustomText';
+import CustomButton from './CustomButton';
+import NavigationHeader from './NavigationHeader';
+import CustomScreenContainer from './CustomScreenContainer';
+import CustomTextInput from './CustomTextInput';
+import Loader from './Loader';
+import PhoneInput from './phoneInput/lib';
 
-export{Header, CategoryCard, HotelCard, StepperInput, FooterTotal, TextButton, OtpVerification};
+export {
+  CustomText,
+  CustomButton,
+  NavigationHeader,
+  CustomScreenContainer,
+  CustomTextInput,
+  Loader,
+  PhoneInput
+};

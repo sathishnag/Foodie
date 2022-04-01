@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "524743419189",
-    "project_id": "satz-37d90",
-    "storage_bucket": "satz-37d90.appspot.com"
+    "project_id": "qkzie-37d90",
+    "storage_bucket": "qkzie-37d90.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:524743419189:android:631e0256cc4554badfd87c",
         "android_client_info": {
-          "package_name": "com.satz"
+          "package_name": "com.qkzie"
         }
       },
       "oauth_client": [

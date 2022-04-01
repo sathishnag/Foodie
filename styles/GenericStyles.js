@@ -91,6 +91,9 @@ export const GenericStyles = StyleSheet.create({
   p16: {
     padding: 16,
   },
+  p8: {
+    padding: 8,
+  },
   navigationHeaderBorder: {
     borderBottomWidth: 1,
     borderBottomColor: colors.SILVER,

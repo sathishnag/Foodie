@@ -1,21 +1,11 @@
-import Home from './Home'
-import Restaurant from './Restaurant'
-import OrderDelivery from './OrderDelivery'
-import MainLayout from './MainLayout'
-import Cart from './Cart'
-import HotelList from './HotelList'
-import HotelDetail from './HotelDetail'
-import PhoneSignIn from './PhoneSignIn'
-import Login from './Login'
+import Home from './Home';
+import LoginQkzie from './LoginQkzie';;
+import SplashScreen from './SplashScreen';
+import OtpVerification from './otp/OtpVerification';
 
 export {
     Home,
-    Restaurant,
-    OrderDelivery,
-    MainLayout,
-    Cart,
-    HotelList,
-    HotelDetail,
-    PhoneSignIn,
-    Login
+    SplashScreen,
+    LoginQkzie,
+    OtpVerification
 }

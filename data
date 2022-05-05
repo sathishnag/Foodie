@@ -1,0 +1,116 @@
+
+Karthick A S <karthickskcet24@gmail.com>
+Fri, Apr 29, 6:23 PM (6 days ago)
+to me
+
+{
+    "commit": {
+        "id": "1b4818950165cda0f0ddf6f594ec73c28f1c6746",
+        "short_id": "1b481895",
+        "created_at": "2022-04-29T17:57:57.000+05:30",
+        "parent_ids": [
+            "f60f6c5057c414faebaa38607454c4b9778df231"
+        ],
+        "title": "Adding test cases",
+        "message": "Adding test cases\n",
+        "author_name": "karthickskcet24",
+        "author_email": "karthickskcet24@gmail.com",
+        "authored_date": "2022-04-29T17:57:57.000+05:30",
+        "committer_name": "karthickskcet24",
+        "committer_email": "karthickskcet24@gmail.com",
+        "committed_date": "2022-04-29T17:57:57.000+05:30",
+        "trailers": {},
+        "web_url": "https://gitlab.com/karthickskcet24/crudapis/-/commit/1b4818950165cda0f0ddf6f594ec73c28f1c6746"
+    },
+    "commits": [
+        {
+            "id": "aad5d3ee767963272b68a891c0debf882a089f43",
+            "short_id": "aad5d3ee",
+            "created_at": "2022-04-29T13:47:50.000+05:30",
+            "parent_ids": [
+                "f2762fa6b8234fec93c24d717f5f3823f59bea10"
+            ],
+            "title": "Test by karthick_fis",
+            "message": "Test by karthick_fis\n",
+            "author_name": "karthickskcet24",
+            "author_email": "karthickskcet24@gmail.com",
+            "authored_date": "2022-04-29T13:47:50.000+05:30",
+            "committer_name": "karthickskcet24",
+            "committer_email": "karthickskcet24@gmail.com",
+            "committed_date": "2022-04-29T13:47:50.000+05:30",
+            "trailers": {},
+            "web_url": "https://gitlab.com/karthickskcet24/crudapis/-/commit/aad5d3ee767963272b68a891c0debf882a089f43"
+        },
+        {
+            "id": "f60f6c5057c414faebaa38607454c4b9778df231",
+            "short_id": "f60f6c50",
+            "created_at": "2022-04-29T13:49:11.000+05:30",
+            "parent_ids": [
+                "aad5d3ee767963272b68a891c0debf882a089f43"
+            ],
+            "title": "test new",
+            "message": "test new\n",
+            "author_name": "karthickskcet24",
+            "author_email": "karthickskcet24@gmail.com",
+            "authored_date": "2022-04-29T13:49:11.000+05:30",
+            "committer_name": "karthickskcet24",
+            "committer_email": "karthickskcet24@gmail.com",
+            "committed_date": "2022-04-29T13:49:11.000+05:30",
+            "trailers": {},
+            "web_url": "https://gitlab.com/karthickskcet24/crudapis/-/commit/f60f6c5057c414faebaa38607454c4b9778df231"
+        },
+        {
+            "id": "1b4818950165cda0f0ddf6f594ec73c28f1c6746",
+            "short_id": "1b481895",
+            "created_at": "2022-04-29T17:57:57.000+05:30",
+            "parent_ids": [
+                "f60f6c5057c414faebaa38607454c4b9778df231"
+            ],
+            "title": "Adding test cases",
+            "message": "Adding test cases\n",
+            "author_name": "karthickskcet24",
+            "author_email": "karthickskcet24@gmail.com",
+            "authored_date": "2022-04-29T17:57:57.000+05:30",
+            "committer_name": "karthickskcet24",
+            "committer_email": "karthickskcet24@gmail.com",
+            "committed_date": "2022-04-29T17:57:57.000+05:30",
+            "trailers": {},
+            "web_url": "https://gitlab.com/karthickskcet24/crudapis/-/commit/1b4818950165cda0f0ddf6f594ec73c28f1c6746"
+        }
+    ],
+    "diffs": [
+        {
+            "old_path": "src/main/java/com/demo/rest/crudApis/CrudApisApplication.java",
+            "new_path": "src/main/java/com/demo/rest/crudApis/CrudApisApplication.java",
+            "a_mode": "100644",
+            "b_mode": "100644",
+            "new_file": false,
+            "renamed_file": false,
+            "deleted_file": false,
+            "diff": "@@ -8,6 +8,7 @@ public class CrudApisApplication {\n \n \tpublic static void main(String[] args) {\n \t\tSpringApplication.run(CrudApisApplication.class, args);\n+\t\t// hello\n \t}\n \n }\n"
+        },
+        {
+            "old_path": "src/main/java/com/demo/rest/crudApis/api/CRUDApi.java",
+            "new_path": "src/main/java/com/demo/rest/crudApis/api/CRUDApi.java",
+            "a_mode": "100644",
+            "b_mode": "100644",
+            "new_file": false,
+            "renamed_file": false,
+            "deleted_file": false,
+            "diff": "@@ -1,5 +1,5 @@\n package com.demo.rest.crudApis.api;\n \n public class CRUDApi {\n-\n+//testing\n }\n"
+        },
+        {
+            "old_path": "src/test/java/com/demo/rest/crudApis/CrudApisApplicationTests.java",
+            "new_path": "src/test/java/com/demo/rest/crudApis/CrudApisApplicationTests.java",
+            "a_mode": "100644",
+            "b_mode": "100644",
+            "new_file": false,
+            "renamed_file": false,
+            "deleted_file": false,
+            "diff": "@@ -9,5 +9,63 @@ class CrudApisApplicationTests {\n \t@Test\n \tvoid contextLoads() {\n \t}\n-\n+\t\n+\t//commit added for merge request api creation\n+1. Home\n+\tSlider(5 img)\n+\t\n+2. About\n+\tWHY “DARWIN SCIENCE CLUB”?\n+\tVission\n+\tMission\n+\tAims\n+\tObjective\n+\t\n+3. Services\n+4. Feedback\n+5. Gallery\n+6. Donate\n+7. Contact1. Home\n+\tSlider(5 img)\n+\t\n+2. About\n+\tWHY “DARWIN SCIENCE CLUB”?\n+\tVission\n+\tMission\n+\tAims\n+\tObjective\n+\t\n+3. Services\n+4. Feedback\n+5. Gallery\n+6. Donate\n+7. Contact1. Home\n+\tSlider(5 img)\n+\t\n+2. About\n+\tWHY “DARWIN SCIENCE CLUB”?\n+\tVission\n+\tMission\n+\tAims\n+\tObjective\n+\t\n+3. Services\n+4. Feedback\n+5. Gallery\n+6. Donate\n+7. Contact1. Home\n+\tSlider(5 img)\n+\t\n+2. About\n+\tWHY “DARWIN SCIENCE CLUB”?\n+\tVission\n+\tMission\n+\tAims\n+\tObjective\n+\t\n+3. Services\n+4. Feedback\n+5. Gallery\n+6. Donate\n+7. Contact\n }\n"
+        }
+    ],
+    "compare_timeout": false,
+    "compare_same_ref": false,
+    "web_url": "https://gitlab.com/karthickskcet24/crudapis/-/compare/f2762fa6b8234fec93c24d717f5f3823f59bea10...1b4818950165cda0f0ddf6f594ec73c28f1c6746"
+}
